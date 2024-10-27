@@ -21,7 +21,7 @@
     <Tabs>
         <RadzenTabsItem Text=".NET 8">
             <div class="rz-py-0 rz-py-sm-4 rz-px-0 rz-px-sm-2 rz-px-lg-12">
-            <RadzenAlert AlertStyle="AlertStyle.Info" Variant="Variant.Flat" Shade="Shade.Lighter" AllowClose="false" class="rz-mb-12">
+            <RadzenAlert AlertStyle="Radzen.AlertStyle.Info" Variant="Variant.Flat" Shade="Shade.Lighter" AllowClose="false" class="rz-mb-12">
 All interactive features of the Radzen Blazor components require interactivity of the container <code>.razor</code> file to be enabled or the <code>@@rendermode</code>
 attribute of the component to be set to one of the following values: <code>InteractiveServer</code>, <code>InteractiveAuto</code> or <code>InteractiveWebAssembly</code>.
 More info is available in the <RadzenLink Text="rendering mode article" Path="https://learn.microsoft.com/en-us/aspnet/core/blazor/components/render-modes?view=aspnetcore-8.0" target="_blank" /> from the official Blazor documentation.
@@ -36,7 +36,7 @@ More info is available in the <RadzenLink Text="rendering mode article" Path="ht
 <code>&lt;RadzenTheme Theme="material" @@rendermode="InteractiveAuto" /&gt;
 </code>
 </pre>
-            <RadzenAlert AlertStyle="AlertStyle.Info" Variant="Variant.Flat" Shade="Shade.Lighter" AllowClose="false">
+                <RadzenAlert AlertStyle="Radzen.AlertStyle.Info" Variant="Variant.Flat" Shade="Shade.Lighter" AllowClose="false">
                 Set the <code>@@rendermode</code> attribute to the render mode of your application e.g. <code>InteractiveServer</code>, <code>InteractiveWebAssembly</code> or <code>InteractiveAuto</code>.
             </RadzenAlert>
             @IncludeJavaScript(("App.razor", CurrentVersion))
@@ -48,7 +48,7 @@ More info is available in the <RadzenLink Text="rendering mode article" Path="ht
 <pre class="rz-p-4">
 <code>&lt;RadzenComponents @@rendermode="InteractiveAuto" /></code>
 </pre>
-            <RadzenAlert AlertStyle="AlertStyle.Info" Variant="Variant.Flat" Shade="Shade.Lighter" AllowClose="false">
+            <RadzenAlert AlertStyle="Radzen.AlertStyle.Info" Variant="Variant.Flat" Shade="Shade.Lighter" AllowClose="false">
                 Set the <code>@@rendermode</code> attribute to the render mode of your application e.g. <code>InteractiveServer</code>, <code>InteractiveWebAssembly</code> or <code>InteractiveAuto</code>.
             </RadzenAlert>
             <RadzenText>
