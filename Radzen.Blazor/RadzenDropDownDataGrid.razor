@@ -8,7 +8,7 @@
 
 @if (Visible)
 {
-    <div @ref="@Element" @attributes="Attributes" class="@GetCssClass()" @onfocus="@((args) => OnFocus(args))"
+    <div @ref="@Element" @attributes="Attributes" class="@GetCssClass()" @onfocus=@this.AsNonRenderingEventHandler(OnFocus)
          style="@Style" tabindex="@(Disabled ? "-1" : $"{TabIndex}")" id="@GetId()" @onclick="@(args => OpenPopup("ArrowDown", false, true))" @onclick:preventDefault @onclick:stopPropagation
          @onkeydown="@((args) => OnKeyPress(args))" @onkeydown:preventDefault="@preventKeydown">
         <div class="rz-helper-hidden-accessible">
@@ -37,7 +37,7 @@
         }
         else if ((selectedItems.Count > 0 || SelectedValue is IEnumerable && !(SelectedValue is string)) && Multiple)
         {
-            var itemsToUse = SelectedValue is IEnumerable && !(SelectedValue is string) ? ((IEnumerable)SelectedValue).Cast<object>().ToList() : selectedItems;
+            var itemsToUse = SelectedValue is IEnumerable && !(SelectedValue is string) ? ((IEnumerable)SelectedValue).Cast<object>().ToHashSet() : selectedItems;
             @if (itemsToUse.Count < MaxSelectedLabels && Chips)
             {
                 <div class="rz-dropdown-chips-wrapper">
@@ -112,7 +112,7 @@
         </div>
 
         <div id="@PopupID" class="@(Multiple ? "rz-multiselect-panel" : "rz-dropdown-panel")"
-             style="display:none;min-width:400px;padding:0px;">
+             style="@PopupStyle">
             <div class="rz-lookup-panel" @onkeydown="@CloseOnEscape">
                 @if (AllowFiltering || HeaderTemplate != null)
                 {
